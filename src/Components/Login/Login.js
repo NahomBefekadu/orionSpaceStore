@@ -1,15 +1,36 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "../../firebase";
+
 function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const signIn = (e) => {
     //prevents refreshing of the page
     e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((error) => alert(error.message));
   };
   const register = (e) => {
     e.preventDefault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        //successfully created a new user account
+        console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
   return (
     <div className="login">
@@ -60,7 +81,7 @@ function Login() {
           type="submit"
           onClick={register}
         >
-          Sign-up >
+          Sign-up
         </button>
       </div>
     </div>
