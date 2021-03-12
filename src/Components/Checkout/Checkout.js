@@ -17,7 +17,7 @@ function Checkout() {
             alt="ad"
           />
           <div>
-            <h3>Hello, {user?.email}</h3>
+            <h3 className="checkout__title">Hello, {user?.email}</h3>
             <h2 className="checkout__title">Your Basket</h2>
             <FlipMove
               enterAnimation="accordionVertical"
