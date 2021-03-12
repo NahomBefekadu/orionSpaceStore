@@ -1,8 +1,9 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 import firebase from "firebase";
+require("dotenv").config();
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAea2ngchMSpVdvEABfolFssnPl9Lek6Kk",
+  apiKey: process.env.API_KEY,
   authDomain: "social-app-twitter-clone.firebaseapp.com",
   projectId: "social-app-twitter-clone",
   storageBucket: "social-app-twitter-clone.appspot.com",

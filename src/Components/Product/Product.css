@@ -11,6 +11,9 @@
   background-color: white;
   z-index: 1;
 }
+.product:hover {
+  transform: scale(1.05);
+}
 .product__info {
   height: 100px;
   margin-bottom: 10px;
