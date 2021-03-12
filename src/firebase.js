@@ -3,7 +3,7 @@ import firebase from "firebase";
 require("dotenv").config();
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyAea2ngchMSpVdvEABfolFssnPl9Lek6Kk",
   authDomain: "social-app-twitter-clone.firebaseapp.com",
   projectId: "social-app-twitter-clone",
   storageBucket: "social-app-twitter-clone.appspot.com",
